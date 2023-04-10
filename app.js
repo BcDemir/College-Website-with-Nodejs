@@ -8,18 +8,36 @@ const bodyParser = require('body-parser')
 
 // Initiate express
 const app = express();
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
 // Setting the view engine and path
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'ejs');
 
-// Simple get API
-app.get('/', (req,res)=>{
-    res.writeHead(200,{'Content-type':'text/html'});
-    res.write('Hello');
-    res.end();
+require('./models/user');
+require('./models/subject');
+
+mongoose.connect('mongodb://127.0.0.1:27017/DMLCollege',{useUnifiedTopology:true}, {useNewUrlParser: true});
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', function(){
+    console.log("We are connected on mongoose!");
 });
+
+// Simple get API for first page
+app.get('/',(req,res)=>{
+    res.render(__dirname+'/views/index.ejs');
+});
+
+app.get('/views/register',(req,res)=>{
+    res.render(__dirname+'/views/register.ejs');
+});
+
+
+
+const appcontroller = require('./controllers/appcontroller.js');
+app.post('/user/register', appcontroller.RegisterUser);
 
 // Listen method
 const port = 3000
