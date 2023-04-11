@@ -25,19 +25,29 @@ db.once('open', function(){
     console.log("We are connected on mongoose!");
 });
 
-// Simple get API for first page
+// Routing with GET API
 app.get('/',(req,res)=>{
-    res.render(__dirname+'/views/index.ejs');
+    res.render(__dirname+'/views/home.ejs');
 });
 
 app.get('/views/register',(req,res)=>{
     res.render(__dirname+'/views/register.ejs');
 });
 
+app.get('/login',(req,res)=>{
+    res.render(__dirname+'/views/login.ejs');
+});
+
+app.get('/studentdetails',(req,res)=>{
+    res.render(__dirname+'/views/studentdetails.ejs');
+});
+
+
 
 
 const appcontroller = require('./controllers/appcontroller.js');
 app.post('/user/register', appcontroller.RegisterUser);
+app.post('/user/login', appcontroller.LoginUser)
 
 // Listen method
 const port = 3000

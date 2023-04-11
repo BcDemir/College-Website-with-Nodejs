@@ -1,0 +1,26 @@
+<html>
+<head>   
+</head>
+<body>
+    <h2>List of the subjects</h2>
+    <section data-position='movies'>
+        <% for ( var i=0; i<allsubjects.length; i++) { %>
+            <%= allsubjects[i].name %> &nbsp;
+            <%= allsubjects[i].director %> &nbsp;
+            <%= allsubjects[i].year_released %> &nbsp; <br >
+        <% } %>
+    </section>
+    <br >
+    <h1> Search by movie name </h1>
+    <form action="/movies/findbyname" method="GET" >
+    <input type="text" name= "name" placeholder="Enter movie name" />
+    <input type="submit" value="Search name" />
+    </form>
+    <br >
+    <h1> Search by movie year </h1>
+    <form action="/movies/findbyyear" method="GET" >
+    <input type="text" name= "year" placeholder="Enter movie year" />
+    <input type="submit" value="Search year" />
+    </form>
+</body>
+</html>
