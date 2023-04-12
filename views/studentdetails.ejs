@@ -31,30 +31,49 @@
         </ul>
       </div>
     </nav>
+
     <h1> Search students by course </h1>
     <form action="/students/findbycourse" method="post" >
     <input type="text" name= "coursename" placeholder="Enter course name" />
     <input type="submit" value="Search name" />
     </form>
+
     <h2>List of all Students</h2>
+    <!-- Visualize with bootstrap table class -->
+    <table  class="table table-striped table-primary">
+
+      <tr>
+      <th>Username</th>
+      <th>Full Name</th>
+      <th>Contact</th>
+      <th>Email</th>
+      <th>Student No</th>
+      <th>Course Registered</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      </tr>
     <section data-position='students'>
         <% for ( var i=0; i<allusers.length; i++) { %>
+          <tr>
         <form action="/student/sendedit" method="post">
-            <%= allusers[i].username %> &nbsp;
-            <%= allusers[i].fullname %> &nbsp;
-            <%= allusers[i].contact %> &nbsp;
-            <%= allusers[i].email %> &nbsp;
-            <%= allusers[i].studentno %> &nbsp;
-            <%= allusers[i].coursename %> &nbsp;
-            <input type="hidden" name="username" value="<%= allusers[i].username %>" />
-            <input type="submit" value="Edit Details" />
+            <td><%= allusers[i].username %></td>
+            <td><%= allusers[i].fullname %></td>
+            <td><%= allusers[i].contact %></td> 
+            <td><%= allusers[i].email %></td> 
+            <td><%= allusers[i].studentno %></td> 
+            <td><%= allusers[i].coursename %></td> 
+            <td><input type="hidden" name="username" value="<%= allusers[i].username %>" />
+            <input type="submit" value="Edit Details" /></td>
         </form>
+        <td>
         <form action="/student/delete" method="post">
             <input type="hidden" name="usernameToDelete" value="<%= allusers[i].username %>" />
             <input type="submit" value="Delete Student" />
-        </form><br>
+        </form></td>
+      </tr>    
         <% } %>
     </section>
+    </table>
     <br >
 
     <br >
