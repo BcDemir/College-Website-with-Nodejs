@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>College Home Page</title>
+    <title>Program Admission Page</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
@@ -31,18 +31,25 @@
         </ul>
       </div>
     </nav>
-    
-    <div class="container">
-      <h1>Welcome to College!</h1>
-      <p>Here's some information about our college:</p>
-      <ul>
-        <li>We offer a wide variety of programs and courses to meet your educational needs.</li>
-        <li>Our faculty are highly qualified and dedicated to helping you succeed.</li>
-        <li>We have a vibrant campus community with many clubs and organizations to join.</li>
-      </ul>
-    </div>
-    
-    <!-- Bootstrap JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <h1> Please enter your name </h1>
+    <input type="text" name= "username" placeholder="Enter username" />
+
+    <h2>List of programs</h2>
+    <section data-position='programs'>
+        <% for ( var i=0; i<allsubjects.length; i++) { %>
+            <form action="/course/register" method="post" >
+            <%= allsubjects[i].coursename %> &nbsp;
+            <%= allsubjects[i].coursesection %> &nbsp;
+            <%= allsubjects[i].coursetime %> &nbsp;
+            <%= allsubjects[i].coursefee %> &nbsp;
+            <input type="hidden" name="coursename" value="<%= allsubjects[i].coursename %>" />
+            <input type="submit" value="Register" /> <br>
+            </form>
+        <% } %>
+        
+    </section>
+    <br >
+
+
+</body>
+</html>

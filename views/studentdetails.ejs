@@ -1,26 +1,63 @@
+<!DOCTYPE html>
 <html>
-<head>   
-</head>
-<body>
-    <h2>List of the subjects</h2>
-    <section data-position='movies'>
-        <% for ( var i=0; i<allsubjects.length; i++) { %>
-            <%= allsubjects[i].name %> &nbsp;
-            <%= allsubjects[i].director %> &nbsp;
-            <%= allsubjects[i].year_released %> &nbsp; <br >
+  <head>
+    <title>Program Admission Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">College</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/views/register">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Student Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/getall">Program Selection</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <h1> Search students by course </h1>
+    <form action="/students/findbycourse" method="post" >
+    <input type="text" name= "coursename" placeholder="Enter course name" />
+    <input type="submit" value="Search name" />
+    </form>
+    <h2>List of all Students</h2>
+    <section data-position='students'>
+        <% for ( var i=0; i<allusers.length; i++) { %>
+        <form action="/student/sendedit" method="post">
+            <%= allusers[i].username %> &nbsp;
+            <%= allusers[i].fullname %> &nbsp;
+            <%= allusers[i].contact %> &nbsp;
+            <%= allusers[i].email %> &nbsp;
+            <%= allusers[i].studentno %> &nbsp;
+            <%= allusers[i].coursename %> &nbsp;
+            <input type="hidden" name="username" value="<%= allusers[i].username %>" />
+            <input type="submit" value="Edit Details" />
+        </form>
+        <form action="/student/delete" method="post">
+            <input type="hidden" name="usernameToDelete" value="<%= allusers[i].username %>" />
+            <input type="submit" value="Delete Student" />
+        </form><br>
         <% } %>
     </section>
     <br >
-    <h1> Search by movie name </h1>
-    <form action="/movies/findbyname" method="GET" >
-    <input type="text" name= "name" placeholder="Enter movie name" />
-    <input type="submit" value="Search name" />
-    </form>
+
     <br >
-    <h1> Search by movie year </h1>
-    <form action="/movies/findbyyear" method="GET" >
-    <input type="text" name= "year" placeholder="Enter movie year" />
-    <input type="submit" value="Search year" />
-    </form>
+
 </body>
 </html>

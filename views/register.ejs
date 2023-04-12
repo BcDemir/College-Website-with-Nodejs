@@ -10,8 +10,16 @@
     <h1>Registration</h1>
     <form action="/user/register" method="post">
       <div>
-        <label for="username">Username:</label><br>
+        <label for="username">User Name:</label><br>
         <input type="text" id="username" name="username" required>
+      </div>
+      <div>
+        <label for="fullname">Full Name:</label><br>
+        <input type="text" id="fullname" name="fullname" required>
+      </div>
+      <div>
+        <label for="contact">Contact:</label><br>
+        <input type="text" id="contact" name="contact" required>
       </div>
       <div>
         <label for="email">Email:</label><br>
@@ -30,6 +38,8 @@
       </div>
     </form>
   </div>
+
+  <a href="/views/registercourses">click to register course</a>
 
   <!-- <form action="/user/register" method = "get" >
     <input type="text" name ="username" id= "username" placeholder="name" />

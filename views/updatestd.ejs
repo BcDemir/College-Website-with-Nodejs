@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>College Home Page</title>
+    <title>Program Admission Page</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
@@ -20,27 +20,31 @@
             <a class="nav-link" href="/login">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/register">Register</a>
+            <a class="nav-link" href="/views/register">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/student-details">Student Details</a>
+            <a class="nav-link" href="/login">Student Details</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/subject-selection">Subject Selection</a>
+            <a class="nav-link" href="/getall">Program Selection</a>
           </li>
         </ul>
       </div>
     </nav>
     
-    <div class="container">
-      <h1>Welcome to College!</h1>
-      <p>Here's some information about our college:</p>
-      <ul>
-        <li>We offer a wide variety of programs and courses to meet your educational needs.</li>
-        <li>Our faculty are highly qualified and dedicated to helping you succeed.</li>
-        <li>We have a vibrant campus community with many clubs and organizations to join.</li>
-      </ul>
-    </div>
+        <h2>Please enter your name to register for <%= coursename %>program</h2>
+        <form action="/course/register/student" method="post">
+            <div>
+              <label for="username">Username:</label><br>
+              <input type="text" id="username" name="username" required>
+              <input type="hidden" value="<%= coursename %>" name="coursename" />
+            </div>
+            <div>
+              <input type="submit" />
+            </div>
+          </form>
+    </body>
+
     
     <!-- Bootstrap JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
