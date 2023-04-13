@@ -110,12 +110,12 @@
             <td><%= allusers[i].studentno %></td> 
             <td><%= allusers[i].coursename %></td> 
             <td><input type="hidden" name="username" value="<%= allusers[i].username %>" />
-            <input type="submit" value="Edit Details" /></td>
+            <input type="submit" class="btn btn-success" value="Edit Details" /></td>
         </form>
         <td>
         <form action="/student/delete" method="post">
             <input type="hidden" name="usernameToDelete" value="<%= allusers[i].username %>" />
-            <input type="submit" value="Delete Student" />
+            <input type="submit" value="Delete Student" class="btn btn-danger" />
         </form></td>
       </tr></tbody>    
         <% } %>
@@ -124,6 +124,11 @@
     <br >
 
     <br >
+
+    <form action="/views/registercourses" method="get" style="text-align: center;">
+      <input type="submit" value="Click to register a course" class="btn btn-info btn-lg"/>
+  </form>
+
     <!-- Javascript files-->
     <script src="../js/jquery.min.js"></script>
     <script src="../js/popper.min.js"></script>
@@ -136,5 +141,10 @@
     <!-- javascript --> 
     <script src="../js/owl.carousel.js"></script>
     <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
 </body>
 </html>

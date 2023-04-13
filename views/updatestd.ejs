@@ -71,14 +71,14 @@
     <!-- header section end -->
     <div class="container h-100 d-flex justify-content-center">
       <div class="jumbotron my-auto">    
-        <h2>Please enter your name to register for <%= coursename %>program</h2>
+        <h2>Please enter your name to register for <%= coursename %> program</h2>
         <form action="/course/register/student" method="post">
             <div>
               <input class="form-control input-lg" type="text" id="username" name="username" required>
               <input type="hidden" value="<%= coursename %>" name="coursename" />
             </div><br>
             <div style="text-align: center;">
-              <input type="submit" class="btn btn-info btn-lg"/>
+              <input type="submit" class="btn btn-info btn-lg" value="Choose This Course"/>
             </div>
           </form>
         </div>
