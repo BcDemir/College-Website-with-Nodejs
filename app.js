@@ -8,11 +8,16 @@ const bodyParser = require('body-parser')
 
 // Initiate express
 const app = express();
+express.static;
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 // Setting the view engine and path
 app.set('views', path.join(__dirname,'views'));
+app.set('images', path.join(__dirname,'images'));
+app.use('/images/', express.static('./images'));
+app.use('/css/', express.static('./css'));
+app.use('/js/', express.static('./js'));
 app.set('view engine', 'ejs');
 
 require('./models/user');
@@ -27,7 +32,7 @@ db.once('open', function(){
 
 // Routing with GET API
 app.get('/',(req,res)=>{
-    res.render(__dirname+'/views/home.ejs');
+    res.render(__dirname+'/views/index.ejs');
 });
 
 app.get('/views/register',(req,res)=>{

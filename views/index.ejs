@@ -34,35 +34,37 @@
     <!-- header section start -->
     <div class="header_section">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="logo"><a href="index.html"><img src="/images/dmcllg.jpg"></a></div>
+        <div class="logo"><a href="/"><img src="../images/dmcllg.jpg"></a></div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="C:\Users\burak\Desktop\Lambton\1.Classes\3. Third Term\2. Full Stack JavaScript 3103\Assignments\CollegeApp\views\index.ejs">HOME</a>
+              <a class="nav-link" href="/">HOME</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">ABOUT</a>
             </li>
            
             <li class="nav-item">
-              <a class="nav-link" href="detail.html">STUDENT DETAIL</a>
+              <a class="nav-link" href="/login">STUDENT DETAILS</a>
             </li>
             
             <li class="nav-item">
-              <a class="nav-link" href="views.html">STUDENT COMMENTS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">CONTACT</a>
+              <a class="nav-link" href="/getall">PROGRAM SELECTION</a>
             </li>
             
-          </ul>                                          
-          <form class="form-inline my-2 my-lg-0">
-            <div class="search_icon"><a href="#"><img src="../images/search-icon.png"></a></div>
-            <!--- burak here you please add search bar so that customer search products by category like for men , women and child--> 
-          </form>
+          </ul>   
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/views/register">Register</a>
+            </li>
+            
+          </ul>                                       
         </div>
       </nav>
     </div>
@@ -80,8 +82,8 @@
                     <p class="consectetur_text">Our college is mainly known for its education, rules and regulations, successful career of 
                       students and hardworking teachers. Just visit once here we are sure that you like it a lot.
                     </p>
-                    <div class="about_bt"><a href="about.html">About Us</a></div>
-                    <div class="contact_bt"><a href="contact.html">Contact Us</a></div>
+                    <div class="about_bt"><a href="/">About Us</a></div>
+                    <div class="contact_bt"><a href="/">Contact Us</a></div>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -94,11 +96,12 @@
                 <div class="col-md-6">
                   <div class="banner_taital">
                     <h1 class="dance_text">DML COLLEGE</h1>
-                    <p class="consectetur_text">Our college is mainly known for its education, rules and regulations, successful career of 
-                      students and hardworking teachers. Just visit once here we are sure that you like it a lot.
+                    <p class="consectetur_text">Our college is dedicated to providing students with a 
+                      transformative educational experience that empowers them to pursue their 
+                      passions and make a positive impact in the world.
                     </p>
-                    <div class="about_bt"><a href="about.html">About Us</a></div>
-                    <div class="contact_bt"><a href="contact.html">Contact Us</a></div>
+                    <div class="about_bt"><a href="/">About Us</a></div>
+                    <div class="contact_bt"><a href="/">Contact Us</a></div>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -111,11 +114,12 @@
                 <div class="col-md-6">
                   <div class="banner_taital">
                     <h1 class="dance_text">DML COLLEGE</h1>
-                    <p class="consectetur_text">Our college is mainly known for its education, rules and regulations, successful career of 
-                      students and hardworking teachers. Just visit once here we are sure that you like it a lot.
+                    <p class="consectetur_text"><large>With a diverse and inclusive community of students, 
+                      faculty, and staff, our college fosters an environment that values intellectual
+                       curiosity, creativity, and collaboration.</large>
                     </p>
-                    <div class="about_bt"><a href="about.html">About Us</a></div>
-                    <div class="contact_bt"><a href="contact.html">Contact Us</a></div>
+                    <div class="about_bt"><a href="/">About Us</a></div>
+                    <div class="contact_bt"><a href="/">Contact Us</a></div>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -128,11 +132,13 @@
                 <div class="col-md-6">
                   <div class="banner_taital">
                     <h1 class="dance_text">DML COLLEGE</h1>
-                    <p class="consectetur_text">Our college is mainly known for its education, rules and regulations, successful career of 
-                      students and hardworking teachers. Just visit once here we are sure that you like it a lot.
+                    <p class="consectetur_text">At our college, we believe that education is a lifelong 
+                      pursuit, and we're committed to helping students develop the knowledge, skills, 
+                      and habits of mind that will enable them to be successful and engaged citizens 
+                      throughout their lives.
                     </p>
-                    <div class="about_bt"><a href="about.html">About Us</a></div>
-                    <div class="contact_bt"><a href="contact.html">Contact Us</a></div>
+                    <div class="about_bt"><a href="/">About Us</a></div>
+                    <div class="contact_bt"><a href="/">Contact Us</a></div>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -166,16 +172,15 @@
           <div class="dance_main">
             <div class="row">
               <div class="col-sm-3">
-                <div class="box active"><a href="full.html">Full-Time</a></div>
-                <div class="box"><a href="part.html">Part-Time</a></div>
+                <div class="box active"><a href="/views/register">Find all our programs here</a></div>
               </div>
               
               <div class="col-md-6 padding_0" style="margin-left: 100px;">
-                <div class="image_1"><img src="../images/lib.jpg"></div>
+                <div class="image_1"><img src="../images/lib.jpg" style="margin-bottom: 100px;"></div>
               </div>
             </div>
           </div>
-          <div class="readmore_bt" style="margin-bottom: 100px;"><a href="../views.html">Read More</a></div>
+
         </div>
       </div>
     </div>
@@ -205,7 +210,7 @@
         </p>
         <br><br>
         
-        <div class="click_bt"><a href="register.ejs">Click To Register</a></div>
+        <div class="click_bt"><a href="/views/register">Click To Register</a></div>
       </div>
     </div>
     
