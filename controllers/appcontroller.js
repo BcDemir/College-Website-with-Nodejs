@@ -56,7 +56,7 @@ module.exports = {
           }
 
           res.setHeader('Content-type', 'text/html');
-          res.write(newUser.username+" registered successfully! <a href='/getallstudents'>Click here to see student database</a>");
+          res.write(newUser.username+"'s registered successfully! Please go to program selection page to register for a course!<a href='/getall'>Program selection page");
           res.end();
 
     },
@@ -100,7 +100,7 @@ module.exports = {
         if(req.body.password==getStudent.password){
           // can send the username data to ejs from here then can use it to update
           res.setHeader('Content-type', 'text/html');
-          res.write("Login successfull! <a href='/getallstudents'>Click here</a>");
+          res.write("Login successfull! Please go to program selection page to register for a course!<a href='/getall'>Program selection page</a>");
           res.end();
         }
         else{
@@ -112,6 +112,43 @@ module.exports = {
       else{
         res.setHeader('Content-type', 'text/html');
         res.write("Student do not exist! Please register <a href='/views/register'>Click here</a>");
+        res.end();
+      }
+      // since this method returns the matched document, not a cursor, print it directly
+      console.log(getStudent);
+
+    },
+    LoginTutor: async function(req,res){
+      console.log("inside logintutor function");
+
+      var newUser = req.body;
+
+      newUser={
+          "username":req.body.username,
+          "password":req.body.password
+      }
+
+      const query = { "username": req.body.username };
+      const getStudent = await User.findOne(query);
+
+      console.log(getStudent);
+
+      if(getStudent != null){
+        if(req.body.password==getStudent.password&&getStudent.isTutor){
+          // can send the username data to ejs from here then can use it to update
+          res.setHeader('Content-type', 'text/html');
+          res.write("Login successfull! Welcome Professor come on in!<a href='/getallstudents'>Student Database</a>");
+          res.end();
+        }
+        else{
+          res.setHeader('Content-type', 'text/html');
+          res.write("Only college staff can access this page! <a href='/login'>Try again</a>");
+          res.end();
+        }
+      }
+      else{
+        res.setHeader('Content-type', 'text/html');
+        res.write("User do not exist! Please register <a href='/views/register'>Click here</a>");
         res.end();
       }
       // since this method returns the matched document, not a cursor, print it directly

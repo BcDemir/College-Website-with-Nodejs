@@ -47,6 +47,10 @@ app.get('/login',(req,res)=>{
     res.render(__dirname+'/views/login.ejs');
 });
 
+app.get('/tutorlogin',(req,res)=>{
+    res.render(__dirname+'/views/tutorlogin.ejs');
+});
+
 app.get('/studentdetails',(req,res)=>{
     res.render(__dirname+'/views/studentdetails.ejs');
 });
@@ -68,6 +72,7 @@ app.get('/getallstudents', appcontroller.GetAllStudents);
 app.post('/user/register', appcontroller.RegisterUser);
 app.post('/user/courses', appcontroller.RegisterCourse);
 app.post('/user/login', appcontroller.LoginUser);
+app.post('/tutor/login', appcontroller.LoginTutor);
 app.post('/course/register', appcontroller.GetStudentInfo);
 app.post('/course/register/student', appcontroller.UpdateStudentInfo);
 app.post('/students/findbycourse', appcontroller.GetByCourse);

@@ -2,22 +2,23 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Registration</title>
+  <title>Student Login Page</title>
   <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Registration</h1>
+  <div class="container h-100 d-flex justify-content-center">
+    <div class="jumbotron my-auto">
+    <h1>Student Login</h1>
     <form action="/user/login" method="post">
-      <div>
+      <div class="row align-items-center">
         <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" required>
+        <input class="form-control input-lg" type="text" id="username" name="username" required>
       </div>
-      <div>
+      <div class="row align-items-center">
         <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required>
+        <input class="form-control input-lg" type="password" id="password" name="password" required>
       </div>
-      <div>
+      <div class="row align-items-center">
         <input type="submit" />
       </div>
     </form>

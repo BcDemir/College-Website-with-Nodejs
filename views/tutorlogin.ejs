@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tutor Login Page</title>
+  <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+    <h1 style="text-align: center;">You need tutor access to enter the database. Please enter you credentials</h1>
+    <div class="container h-100 d-flex justify-content-center">
+        <div class="jumbotron my-auto">
+        <h1>Tutor Login</h1>
+        <form action="/tutor/login" method="post">
+          <div class="row align-items-center">
+            <label for="username">Username:</label><br>
+            <input class="form-control input-lg" type="text" id="username" name="username" required>
+          </div>
+          <div class="row align-items-center">
+            <label for="password">Password:</label><br>
+            <input class="form-control input-lg" type="password" id="password" name="password" required>
+          </div>
+          <div class="row align-items-center">
+            <input type="submit" />
+          </div>
+        </form>
+      </div>
+
+
+</body>
+</html>
